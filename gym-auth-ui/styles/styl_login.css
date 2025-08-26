@@ -1,0 +1,60 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-side-image{
+    background-image: url('../images/pexels-anush-1229356.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 50%;
+    float: left;
+}
+
+.wrapper-login{
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
+  height: 100vh;
+  
+}
+
+form{
+  width: 400px;
+  margin-top: 100px;
+}
+
+form input{
+    padding: 12px;
+    margin: 12px;
+    width: 100%;
+}
+
+form input[type="checkbox"] {
+    display: block;
+    width: auto;
+}
+
+.checkbox-row {
+    display: flex;
+    align-items: center;
+}
+
+
+.motivational-text {
+    position: absolute;
+    right: 0;
+    top: 17%;
+    transform: translateY(-50%);
+    text-align: center;
+    font-size: 80px;
+    color: black;
+    width: 50%;
+  
+}
