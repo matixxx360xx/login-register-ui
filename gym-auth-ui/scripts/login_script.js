@@ -1,21 +1,45 @@
-let licznik = 0;
+// Function that changes the background image every 6 seconds
 let i = 0;
-function changeImageEvery5s(){
-    let tab = ["pexels-anush-1229356","pexels-anush-1431282"];
+function changeImageEvery6s(){
+    let tab = ["pexels-anush-1431282","pexels-anush-1431283"];
     setInterval(() => {
-        if(i == 2){
-            i = 0;
-        }
-        licznik++;
-        if(licznik == 5){
             document.getElementById("side-image").style.backgroundImage = "url('../images/" + tab[i] + ".jpg')";
-            i++;
-            licznik = 0;
-        }
-    }, 1000)
-    
-} 
+            i = (i + 1) % tab.length;
+    }, 6000)
+}
 
-window.onload = function() {
-  changeImageEvery5s();
+// Function that toggles light/dark mode and saves the choice in localStorage
+function light_dark_mode(){
+    const img = document.getElementById("switch-light");
+    const wrapper = document.querySelector(".wrapper-login");
+    const motivational = document.querySelector(".motivational-text");
+
+    wrapper.classList.toggle("dark");
+    motivational.classList.toggle("dark");
+
+    if(wrapper.classList.contains("dark")){
+        img.src = "https://upload.wikimedia.org/wikipedia/commons/0/09/Pok%C3%A9mon_Dark_Type_Icon.svg";
+        localStorage.setItem("darkMode", "true");
+    }else{
+        img.src = "https://upload.wikimedia.org/wikipedia/commons/6/66/Antu_applications-education-preschool.svg";
+        localStorage.setItem("darkMode", "false");
+    }
+}
+
+// Function that loads dark mode based on the value from localStorage
+function load_dark_mode(){
+    const img = document.getElementById("switch-light");
+    const wrapper = document.querySelector(".wrapper-login");
+    const motivational = document.querySelector(".motivational-text");
+    if (localStorage.getItem("darkMode") === "true") {
+        wrapper.classList.add("dark");
+        motivational.classList.add("dark");
+        img.src = "https://upload.wikimedia.org/wikipedia/commons/0/09/Pok%C3%A9mon_Dark_Type_Icon.svg";
+    }
+}
+
+// Function that runs after the page loads, initializes the slider and dark mode
+window.onload = function(){
+    changeImageEvery6s();
+    load_dark_mode()
 };
