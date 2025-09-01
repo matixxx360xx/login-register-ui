@@ -13,7 +13,9 @@ function light_dark_mode(){
     const img = document.getElementById("switch-light");
     const wrapper = document.querySelector(".wrapper-login");
     const motivational = document.querySelector(".motivational-text");
+    const anchor = document.querySelector("a");
 
+    anchor.classList.toggle("dark");
     wrapper.classList.toggle("dark");
     motivational.classList.toggle("dark");
 
@@ -31,15 +33,33 @@ function load_dark_mode(){
     const img = document.getElementById("switch-light");
     const wrapper = document.querySelector(".wrapper-login");
     const motivational = document.querySelector(".motivational-text");
+    const anchor = document.querySelector("a");
     if (localStorage.getItem("darkMode") === "true") {
         wrapper.classList.add("dark");
         motivational.classList.add("dark");
+        anchor.classList.add("dark");
         img.src = "https://upload.wikimedia.org/wikipedia/commons/0/09/Pok%C3%A9mon_Dark_Type_Icon.svg";
     }
 }
 
+// Function that toggles the password visibility (show/hide) and changes the icon accordingly
+function toggle_password(){
+    const password = document.getElementById("password");
+    const togglePassword = document.querySelector(".toggle-password");
+
+    if (password.type === "password") {
+        password.type = "text";
+        togglePassword.src = "https://www.svgrepo.com/show/380010/eye-password-show.svg";
+    } else {
+        password.type = "password";
+        togglePassword.src = "https://www.svgrepo.com/show/380007/eye-password-hide.svg";
+    }
+}
+   
+
+
 // Function that runs after the page loads, initializes the slider and dark mode
 window.onload = function(){
     changeImageEvery6s();
-    load_dark_mode()
+    load_dark_mode();
 };

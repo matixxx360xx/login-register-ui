@@ -34,11 +34,14 @@ body {
      height: 100vh;
      background-color: white;
      color: black;
+     transition: background-color 1s ease-in-out;
+     
 }
 
 .wrapper-login.dark {
      background-color: #1E1E1E;
      color: white;
+      
 }
 
 /* ===========================
@@ -90,6 +93,21 @@ form input[type="checkbox"] {
 .checkbox-row {
      display: flex;
      align-items: center;
+     font-weight: 400;
+     
+     
+}
+
+/* ===========================
+  TOGGLE PASSWORD VISIBILITY
+=========================== */
+
+.toggle-password{
+     width: 20px;
+     height: 20px;
+     position: absolute;
+     margin-top: -42px;
+     margin-left: 370px;
 }
 
 /* ===========================
@@ -171,4 +189,17 @@ form input[type="checkbox"] {
      position: absolute;
      top: 20px;   
      right: 20px;
+}
+
+/* ===========================
+     ANCHOR (<a>) STYLES
+=========================== */
+a {
+      margin-left: auto;
+      text-decoration: none;
+      color: black;
+}
+
+a.dark {
+      color: white;
 }
