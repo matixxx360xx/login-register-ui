@@ -3,10 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styl.css">
+    <link rel="stylesheet" href="../styles/styl.css">
+    <script src="../scripts/login_script.js"></script>
     <title>register</title>
 </head>
 <body>
-    
+    <div class="login-side-image" id="side-image"></div>
+
+<div class="motivational-text">Be <div style="color: gold;">stronger</div> every day</div>
+<div class="light-dark-mode" onclick="light_dark_mode()">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/Antu_applications-education-preschool.svg" id="switch-light" alt="">
+</div>
+
+<div class="wrapper-login">
+    <form>
+        
+        <input type="text" placeholder="Login">
+        <input type="email" placeholder="e-mail">
+        <input type="password" id="password" placeholder="Hasło"><img class="toggle-password" onclick="toggle_password(this)" src="https://www.svgrepo.com/show/380007/eye-password-hide.svg">
+        <input type="password" id="pow_password" placeholder="Potwierdź hasło"><img class="toggle-password" onclick="toggle_password(this)" src="https://www.svgrepo.com/show/380007/eye-password-hide.svg">
+
+        <input type="button" value="Zarejestruj się">
+            <div class="line"></div>
+        <button type="button" class="google-login">
+            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google logo">
+            Zarejestruj się przez Google
+        </button>
+          <button type="button" class="apple-login">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Google logo">
+            Zarejestruj się przez Apple
+        </button>
+         <p><a href="register.html"> Masz konto? Zaloguj się</a> </p>
+    </form>
+  
+</div>
 </body>
 </html>
