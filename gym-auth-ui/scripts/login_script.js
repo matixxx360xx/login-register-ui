@@ -57,6 +57,20 @@ function toggle_password(icon){
         icon.src = "https://www.svgrepo.com/show/380007/eye-password-hide.svg";
     }
 }
+
+
+// Function that checks if password and confirmation match, shows warning if not
+function register_walid(){
+    let password = document.getElementById("password").value;
+    let pow_password = document.getElementById("pow_password").value;
+    let text = document.querySelector(".warning")
+
+    if(password != pow_password){
+        text.innerHTML = "Hasła muszą być takie same!!!!!";
+    }else{
+        text.innerHTML = "  ";
+    }
+}
    
 
 
